@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" type="text/css" href="assets/calculator.css">
+		<script src="assets/calculator.js"></script>
+		<title>Calculator</title>
+	</head>
+	<body>
+		<div id="myCalculator">
+			<main>
+				<section class="inc">
+						<div>
+							<h4>Incandescent</h4>
+							<p>100.0</p>
+							<p>4.38</p>
+						</div>
+				</section>
+				<section class="hal">
+					<div>
+						<h4>Halogen</h4>
+						<p>72.0</p>
+						<p>3.15</p>
+					</div>
+				</section>
+				<section class="cfl">
+					<div>
+						<h4>CFL</h4>
+						<p>23.4</p>
+						<p>1.02</p>
+					</div>
+				</section>
+				<section class="led">
+					<div>
+						<h4>LED</h4>
+						<p>20.0</p>
+						<p>0.88</p>
+					</div>
+				</section>
+			</main>
+			<form>
+				<div>
+					<h4>Lumens</h4>
+					<p>Brighttness <br> of bulb</p>
+					<select>
+						<option label="375" value="375">375</option>
+						<option label="600" value="600" selected="selected">600</option>
+						<option label="900" value="900">900</option>
+						<option label="1125" value="1125">1125</option>
+						<option label="1600" value="1600">1600</option>
+					</select>
+				</div>
+				<div>
+					<h4>kWh</h4>
+					<p>Kilowatt-<br>hour cost</p>
+					<input type="number" value="12"> cents
+				</div>
+				<div>
+					<h4>Hours</h4>
+					<p>Usage <br>per day</p>
+					<input type="number" value="1">
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
