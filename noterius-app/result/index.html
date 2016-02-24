@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="noteriousApp">
 
   <head>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -23,6 +23,12 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
+            <a class="blue" href="#/">Boards</a>
+          </li>
+          <li>
+            <a class="blue" href="#/board/0">Boards</a>
+          </li>
+          <li>
             <a class="blue" href="http://angularjs.org/" target="_blank">AngularJS</a>
           </li>
           <li>
@@ -35,7 +41,7 @@
 
     <!-- Add your site or application content here -->
     <div>
-      <div id="content-container">Connect {{'Angular'}}</div>
+      <div id="content-container" ng-view></div>
     </div>
 
     <script type="text/javascript" src="js/angular.js"></script>
