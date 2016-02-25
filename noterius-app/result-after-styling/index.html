@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="noteriousApp">
+
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="bg-blue" ng-controller="MainController as mainCtrl">
+    <header class="navbar-clear" role="banner">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">
+          <img src="assets/images/logo.png" alt="noterio.us" />
+        </a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a class="blue" href="#/">Boards</a>
+          </li>
+          <li>
+            <a class="blue" href="http://angularjs.org/" target="_blank">AngularJS</a>
+          </li>
+          <li>
+            <a class="blue" href="https://github.com/simpulton/noterious" target="_blank">GITHUB</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </header>
+
+    <!-- Add your site or application content here -->
+    <div>
+      <div id="content-container" ng-view></div>
+    </div>
+
+    <script type="text/javascript" src="vendor/angular.js"></script>
+    <script type="text/javascript" src="vendor/angular-route.js"></script>
+    <script type="text/javascript" src="app/index.module.js"></script>
+    <script type="text/javascript" src="app/index.config.js"></script>
+    <script type="text/javascript" src="app/index.route.js"></script>
+    <script type="text/javascript" src="app/components/boards/boards.service.js"></script>
+    <script type="text/javascript" src="app/main/main.controller.js"></script>
+    <script type="text/javascript" src="app/boards/boards.controller.js"></script>
+    <script type="text/javascript" src="app/boards/board.controller.js"></script>
+    <script type="text/javascript" src="app/notes/notes.controller.js"></script>
+  </body>
+
+</html>
