@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html ng-app="calculator">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="app/calculator/calculator.css">
+		<title>Calculator</title>
+	</head>
+	<body>
+		<div id="myCalculator" ng-controller="CalculatorController as calc">
+			<main>
+                <lamp ng-repeat="(type, lamp) in calc.lamps track by $index"></lamp>
+			</main>
+			<form>
+				<div>
+					<h4>Lumens</h4>
+					<p>Brighttness <br> of bulb</p>
+					<select ng-model="calc.current_lumens" ng-options="o as o for o in calc.lumen_options"></select>
+				</div>
+				<div>
+					<h4>kWh</h4>
+					<p>Kilowatt-<br>hour cost</p>
+					<input type="number" ng-model="calc.current_cost"> cents
+				</div>
+				<div>
+					<h4>Hours</h4>
+					<p>Usage <br>per day</p>
+					<input type="number" ng-model="calc.current_hours" ng-change="calc.validate()">
+				</div>
+			</form>
+		</div>
+
+        <script src="vendors/angular.min.js"></script>
+        <script src="app/calculator/calculator.module.js"></script>
+        <script src="app/calculator/lamp/lamps-types.constant.js"></script>
+        <script src="app/calculator/lumens-list.constant.js"></script>
+        <script src="app/calculator/calculator.controller.js"></script>
+        <script src="app/calculator/lamp/lamp.controller.js"></script>
+        <script src="app/calculator/lamp/lamp.directive.js"></script>
+	</body>
+</html>
