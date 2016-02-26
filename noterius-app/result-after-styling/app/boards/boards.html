@@ -11,14 +11,14 @@
         </a>
     </div>
 </div>
-<div class="create board" ng-controller="BoardController as boardCtrl">
+<div class="create board">
     <div class="caption">
         <form name="boardForm">
             <fieldset>
-                <div><input type="text" class="medium" placeholder="Board Title" required ng-model="boardCtrl.board.title"></div>
-                <div><input type="text" placeholder="Board description." required ng-model="boardCtrl.board.description"></div>
-                <div class="bottom x-small"><input type="checkbox" ng-model="boardCtrl.board.isPublic"> Board is Public</div>
-                <button type="submit" class="bottom-right-corner"><span class="glyphicon glyphicon-plus" ng-click="boardCtrl.add(boardCtrl.board, boardForm)"></span></button>
+                <div><input type="text" class="medium" placeholder="Board Title" required ng-model="boardsCtrl.newBoard.title"></div>
+                <div><input type="text" placeholder="Board description." required ng-model="boardsCtrl.newBoard.description"></div>
+                <div class="bottom x-small"><input type="checkbox" ng-model="boardsCtrl.newBoard.isPublic"> Board is Public</div>
+                <button type="submit" class="bottom-right-corner"><span class="glyphicon glyphicon-plus" ng-click="boardsCtrl.add(boardsCtrl.newBoard, boardForm)"></span></button>
             </fieldset>
         </form>
     </div>
