@@ -4,22 +4,24 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="assets/calculator.css">
+		<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
 		<script src="assets/angular.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.0-beta.1/jquery-ui.min.js"></script>
 		<script src="assets/calculator.js"></script>
 		<title>Calculator</title>
 	</head>
 	<body>
 		<div id="myCalculator" ng-controller="CalculatorController as calc">
 			<main>
-				<section ng-class="type" ng-repeat="(type, lamp) in calc.lamps track by $index">
-					<div ng-controller="LampController as lampCtrl">
-						<h4>{{ lamp.name }}</h4>
-						<p>{{ lampCtrl.wattage }}</p>
-						<p>{{ lampCtrl.cost }}</p>
-					</div>
-				</section>
+<lamp 
+name="lamp.name" 
+coefficients="lamp.coefficients" 
+type="type"
+ng-repeat="(type, lamp) in calc.lamps track by $index"></lamp>
 			</main>
-			<form>
+			
+			<form draggable resizable>
+
 				<div>
 					<h4>Lumens</h4>
 					<p>Brighttness <br> of bulb</p>

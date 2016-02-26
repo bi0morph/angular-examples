@@ -1,7 +1,38 @@
 (function iife() {
   'use strict';
 
+  function lamp() {
+    return {
+      restrict: 'E',
+      templateUrl: 'assets/lamp.html',
+      controller: 'LampController',
+      controllerAs: 'lampCtrl'
+    };
+  }
+  function draggable() {
+    function linker($scope, $element, $attr) {
+      console.log();
+      $element.draggable();
+    }
+    return {
+      restrict: 'A',
+      link: linker
+    };
+  }
+  function resizable() {
+    function linker($scope, $element, $attr) {
+      $element.resizable();
+    }
+    return {
+      restrict: 'A',
+      link: linker
+    };
+  }
+
   angular.module('calculator', [])
+    .directive('lamp', lamp)
+    .directive('draggable', draggable)
+    .directive('resizable', resizable)
     .controller('CalculatorController', CalculatorController)
     .controller('LampController', LampController)
     .constant('LumensList', [375, 600, 900, 1125, 1600])
@@ -27,6 +58,7 @@
   LampController.$inject = ['LampTypes', '$scope'];
   function LampController (LampTypes, $scope) {
     var lamp = this;
+
     lamp.wattage = _calculateWattage();
     lamp.cost = _calculateCost();
     
