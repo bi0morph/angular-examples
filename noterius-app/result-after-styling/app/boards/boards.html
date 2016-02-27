@@ -1,12 +1,12 @@
-<div class="edit board my-repeat-animation" ng-repeat="board in boardsCtrl.boards">
+<div class="edit board my-repeat-animation" ng-repeat="(boardId, board) in boardsCtrl.boards">
     <div class="caption">
-        <button type="button" class="top-right-corner" ng-click="boardsCtrl.remove(board)">
+        <button type="button" class="top-right-corner" ng-click="boardsCtrl.remove(boardId)">
             <span class="glyphicon glyphicon-remove"></span>
         </button>
         <div><input type="text" ng-model="board.title" class="medium" placeholder="Board Title"></div>
         <div><input type="text" ng-model="board.description" placeholder="Board description."></div>
         <div class="bottom x-small"><input type="checkbox" ng-model="board.isPublic"> Board is Public</div>
-        <a ng-href="#/board/{{$index}}" type="button" class="view bottom-right-corner">
+        <a ng-href="#/board/{{::boardId}}" type="button" class="view bottom-right-corner">
             <span class="glyphicon glyphicon-arrow-right"></span>
         </a>
     </div>
