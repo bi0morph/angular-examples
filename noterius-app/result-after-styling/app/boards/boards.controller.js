@@ -20,21 +20,21 @@
 				$log.error(error);
 		}
 		function _updateBoardModel() {
-			// метод getBoards сервиса BoardsService возвращает Promise объект
+			// РјРµС‚РѕРґ getBoards СЃРµСЂРІРёСЃР° BoardsService РІРѕР·РІСЂР°С‰Р°РµС‚ Promise РѕР±СЉРµРєС‚
 			var promiseFromBoard = BoardsService.find();
 
-			// добавляем функции обратного вызова
+			// РґРѕР±Р°РІР»СЏРµРј С„СѓРЅРєС†РёРё РѕР±СЂР°С‚РЅРѕРіРѕ РІС‹Р·РѕРІР°
 			promiseFromBoard.then(function(result){
 				$log.debug(result);
 				// http://joxi.ru/Y2LDBgESnqZd62
-				// в result мы получаем:
-				// result.config - то что было в запросе
-				// result.data - непосредственно данные, которые отдал сервер
-				// result.header - заголовок ответа сервера
-				// result.status - статус ответа сервера
-				// result.statusText - текст статуса
+				// РІ result РјС‹ РїРѕР»СѓС‡Р°РµРј:
+				// result.config - С‚Рѕ С‡С‚Рѕ Р±С‹Р»Рѕ РІ Р·Р°РїСЂРѕСЃРµ
+				// result.data - РЅРµРїРѕСЃСЂРµРґСЃС‚РІРµРЅРЅРѕ РґР°РЅРЅС‹Рµ, РєРѕС‚РѕСЂС‹Рµ РѕС‚РґР°Р» СЃРµСЂРІРµСЂ
+				// result.header - Р·Р°РіРѕР»РѕРІРѕРє РѕС‚РІРµС‚Р° СЃРµСЂРІРµСЂР°
+				// result.status - СЃС‚Р°С‚СѓСЃ РѕС‚РІРµС‚Р° СЃРµСЂРІРµСЂР°
+				// result.statusText - С‚РµРєСЃС‚ СЃС‚Р°С‚СѓСЃР°
 
-				// изменяем нашу модель приложения
+				// РёР·РјРµРЅСЏРµРј РЅР°С€Сѓ РјРѕРґРµР»СЊ РїСЂРёР»РѕР¶РµРЅРёСЏ
 				vm.boards = result.data;
 			}).catch(_showError);
 		}

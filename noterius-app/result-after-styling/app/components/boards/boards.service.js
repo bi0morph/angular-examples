@@ -7,19 +7,19 @@
 			boardsService = {};
 
 		function _find() {
-			// создаем объект из которого получим Promise
+			// СЃРѕР·РґР°РµРј РѕР±СЉРµРєС‚ РёР· РєРѕС‚РѕСЂРѕРіРѕ РїРѕР»СѓС‡РёРј Promise
 			var deferred = $q.defer(),
 				url = baseUrl + '/boards.json';
 
-			// $http.get возвращает свой Promise объект
+			// $http.get РІРѕР·РІСЂР°С‰Р°РµС‚ СЃРІРѕР№ Promise РѕР±СЉРµРєС‚
 			var promiseFromHttp = $http.get(url);
 
-			// в случае успеха сообщаем нашему Promise объекту, что все ок
+			// РІ СЃР»СѓС‡Р°Рµ СѓСЃРїРµС…Р° СЃРѕРѕР±С‰Р°РµРј РЅР°С€РµРјСѓ Promise РѕР±СЉРµРєС‚Сѓ, С‡С‚Рѕ РІСЃРµ РѕРє
 			promiseFromHttp
 				.then(deferred.resolve)
 				.catch(deferred.reject);
 
-			// возвращаем наш Promise объект
+			// РІРѕР·РІСЂР°С‰Р°РµРј РЅР°С€ Promise РѕР±СЉРµРєС‚
 			return deferred.promise;
 		}
 
